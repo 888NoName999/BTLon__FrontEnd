@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dép quai hậu</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var thumbnails = document.querySelectorAll('.thumbnail');
+            var largeImage = document.getElementById('largeImage');
+            
+            thumbnails.forEach(function(thumbnail) {
+                thumbnail.addEventListener('mouseenter', function() {
+                    largeImage.src = this.src;
+                });
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: gray;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .thumbnail-container img {
+            width: 22%;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .thumbnail-container img:hover {
+            border-color: #333;
+            transform: scale(1.05);
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-price, .product-sale-price {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .sale-price {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .add-to-cart-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            align-self: start;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #27ae60;
+        }
+
+        .product-summary, .product-description {
+            margin-bottom: 20px;
+        }
+
+        .product-summary h2, .product-description h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Long's Shop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Trang chủ.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Đăng kí.html">Đăng kí</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Đăng nhập.html">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Liên hệ.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tin tức</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">link</a></li>
+                                <li><a class="dropdown-item" href="#">link</a></li>
+                                <li><a class="dropdown-item" href="#">link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Tìm kiếm">
+                        <button class="btn btn-primary" type="button">Tìm kiếm</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="product-container">
+        <div class="image-gallery">
+            <div class="main-image">
+                <img id="largeImage" src="./quai hậu 1.jpeg" alt="Ảnh sản phẩm 1">
+            </div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="./quai hậu 2.jpeg" alt="Ảnh sản phẩm 2">
+                <img class="thumbnail" src="./quai hậu 3.jpeg" alt="Ảnh sản phẩm 3">
+                <img class="thumbnail" src="./quai hậu 4.jpeg" alt="Ảnh sản phẩm 4">
+            </div>
+        </div>
+        <div class="product-details">
+            <h2 class="product-title">Dép quai hậu</h2>
+            <p class="product-price">Giá: <span class="price">35000đ</span></p>
+            <p class="product-sale-price">Giá khuyến mãi: <span class="sale-price">28000đ (Giảm 20%)</span></p>
+            <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product-summary">
+            <h2>Sơ lược về dép quai hậu</h2>
+            <p>Đây là loại dép được sử dụng nhiều đặc biệt là với các bạn học sinh.</p>
+        </div>
+        <div class="product-description">
+            <h2>Mô tả sản phẩm</h2>
+            <p>Dép quai hậu là loại dép có thiết kế với một quai hoặc dây ở phía sau gót chân để giữ chắc
+                chân khi đi. Đây là một loại dép thông dụng, mang lại sự thoải mái và tiện lợi cho người
+                sử dụng.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Vũ Việt Long CNTT 17-01 - 1771020435 - vuvietlong12072k5@gmail.com</p>
+    </footer>
+</body>
+</html>
